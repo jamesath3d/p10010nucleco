@@ -1,6 +1,6 @@
 #include "main.h"
 
-inline main_loop(){
+inline void main_loop(void){
 } // main_loop
 
 int main(void) {

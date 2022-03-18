@@ -4,6 +4,8 @@ Nucleco101/main.c
 Nucleco101/main.h
 Nucleco101/main_init.c
 Nucleco101/main_init.h
+Nucleco101/wdt_init.c
+Nucleco101/wdt_init.h
 ../../../../../ti/ti/ccs1040/ccs/ccs_base/msp430/include_gcc/in430.h
 ../../../../../ti/ti/ccs1040/ccs/ccs_base/msp430/include_gcc/iomacros.h
 ../../../../../ti/ti/ccs1040/ccs/ccs_base/msp430/include_gcc/msp430fr2433.h

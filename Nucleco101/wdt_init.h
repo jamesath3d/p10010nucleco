@@ -2,6 +2,7 @@
 #define _MAIN_INIT_H
 
 #include "_wdt_init.h"
-void main_init(void);
+
+void wdt_init(void);
 
 #endif
