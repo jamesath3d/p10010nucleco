@@ -8,7 +8,7 @@ void main_loop(void){
     } else {
         _Set0_(vsync3);
     }
-    if ( _sCNT & 0x8 ) {
+    if ( _sCNT & 0x2 ) {
         _Set1_(vsync4);
     } else {
         _Set0_(vsync4);
