@@ -1,5 +1,5 @@
-#ifndef _MAIN_INIT_H
-#define _MAIN_INIT_H
+#ifndef WDT_INIT_H
+#define WDT_INIT_H
 
 #include "_wdt_init.h"
 
