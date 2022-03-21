@@ -7,6 +7,8 @@
 #include "_include_all.h"
 
 #include "main_init.h"
+#include "wdt_init.h"
+#include "gpio_init.h"
 
 
 #endif

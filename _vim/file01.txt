@@ -1,5 +1,7 @@
 ../tesT02/Makefile
 Makefile.env
+Nucleco101/gpio_init.c
+Nucleco101/gpio_init.h
 Nucleco101/main.c
 Nucleco101/main.h
 Nucleco101/main_init.c
