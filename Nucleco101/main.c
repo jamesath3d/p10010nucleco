@@ -4,14 +4,14 @@ uint16_t _sCNT = 0 ;
 void main_loop(void){
     _sCNT ++ ;
     if ( _sCNT & 0x1 ) {
-        vsync3_TO_1() ;
+        _Set1_(vsync3);
     } else {
-        vsync3_TO_0() ;
+        _Set0_(vsync3);
     }
     if ( _sCNT & 0x8 ) {
-        vsync4_TO_1() ;
+        _Set1_(vsync4);
     } else {
-        vsync4_TO_0() ;
+        _Set0_(vsync4);
     }
 } // main_loop
 
