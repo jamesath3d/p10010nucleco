@@ -20,22 +20,33 @@ inline void main_loop02(void){
 
     _Set1_(vsync3);
     _Set0_(vsync3);
-    _Set1_(vsync3);
-    _Set0_(vsync3);
+    //_Set1_(vsync3);
+    //_Set0_(vsync3);
 
     _Set0_(vsync4);
 
     _Set1_(vsync3);
     _Set0_(vsync3);
-    _Set1_(vsync3);
-    _Set0_(vsync3);
+    //_Set1_(vsync3);
+    //_Set0_(vsync3);
 } // main_loop02
+
+inline void main_loop03(void){
+    _Set1_(vsync4);
+    _Set0_(vsync3);
+    __nop();
+    _Set0_(vsync4);
+    _Set1_(vsync3);
+    //_Set1_(vsync3);
+    //_Set0_(vsync3);
+} // main_loop03
 
 int main(void) {
     main_init(); // _clk_init_16mhz
 
     while(1){
         // main_loop01();
-        main_loop02();
+        //main_loop02();
+        main_loop03();
     }
 } // main
