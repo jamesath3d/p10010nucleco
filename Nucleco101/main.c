@@ -1,7 +1,7 @@
 #include "main.h"
 
 uint16_t _sCNT = 0 ;
-void main_loop(void){
+void main_loop01(void){
     _sCNT ++ ;
     if ( _sCNT & 0x1 ) {
         _Set1_(vsync3);
@@ -13,12 +13,29 @@ void main_loop(void){
     } else {
         _Set0_(vsync4);
     }
-} // main_loop
+} // main_loop01
+
+inline void main_loop02(void){
+    _Set1_(vsync4);
+
+    _Set1_(vsync3);
+    _Set0_(vsync3);
+    _Set1_(vsync3);
+    _Set0_(vsync3);
+
+    _Set0_(vsync4);
+
+    _Set1_(vsync3);
+    _Set0_(vsync3);
+    _Set1_(vsync3);
+    _Set0_(vsync3);
+} // main_loop02
 
 int main(void) {
     main_init(); // _clk_init_16mhz
 
     while(1){
-        main_loop();
+        // main_loop01();
+        main_loop02();
     }
 } // main
