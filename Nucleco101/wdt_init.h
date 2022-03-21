@@ -3,6 +3,6 @@
 
 #include "_wdt_init.h"
 
-void wdt_init(void);
+//void wdt_init(void);
 
 #endif
