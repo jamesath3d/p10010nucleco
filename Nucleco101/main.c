@@ -1,5 +1,6 @@
 #include "main.h"
 
+/*
 uint16_t _sCNT = 0 ;
 void main_loop01(void){
     _sCNT ++ ;
@@ -30,10 +31,12 @@ inline void main_loop02(void){
     //_Set1_(vsync3);
     //_Set0_(vsync3);
 } // main_loop02
+*/
 
 inline void main_loop03(void){
     _Set1_(vsync4);
     _Set0_(vsync3);
+    __nop();
     __nop();
     _Set0_(vsync4);
     _Set1_(vsync3);
