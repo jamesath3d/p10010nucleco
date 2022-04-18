@@ -2,7 +2,8 @@
 #define MAIN_H
 
 // #define Clk16384
-#define Clk16mhz
+//#define Clk16mhz
+#define Clk1mhz
 
 #include "_include_all.h"
 
