@@ -51,5 +51,6 @@ int main(void) {
         // main_loop01();
         //main_loop02();
         main_loop03();
+        Delay_1000ms();
     }
 } // main
