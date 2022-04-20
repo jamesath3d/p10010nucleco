@@ -19,6 +19,12 @@ void gpio_init(void);
 //#define vsync4_init()           { _SetOUT_(vsync4); }     // }
 //#define vsync4_TO_1()           { _Set1_( vsync4 ); }     // to 1
 
+// p1.2/vsyn5
+#define vsync5_PORT_            1
+#define vsync5_PIN_             2
+// p1.3/vsyn6
+#define vsync6_PORT_            1
+#define vsync6_PIN_             3
 
 
 #endif
