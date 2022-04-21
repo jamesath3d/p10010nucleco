@@ -26,5 +26,8 @@ void gpio_init(void);
 #define vsync6_PORT_            1
 #define vsync6_PIN_             3
 
+#define vena3                   3,0
+#define vena4                   2,3
+#define venaALL                 2,vena3,vena4
 
 #endif

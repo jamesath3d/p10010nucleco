@@ -1,18 +1,6 @@
 #include "main.h"
 
-int main(void) {
-    main_init(); // _clk_init_16mhz
-
-    while(0){
-        _WDT_wait_interrupt_LPM4 ;  // Enter LPM3
-        __nop();                    // For debugger
-    }
-
-    //_gpio_mclk_p13  ;
-    //_gpio_smclk_p17 ;
-    //_gpio_aclk_p22  ;
-
-    
+int main01(void) {
     P1DIR |= BIT1 | BIT2;                     // P1.1 and P1.2 output
 
     //P1SEL1 |= BIT1 | BIT2;                    // P1.1 and P1.2 options select
@@ -25,6 +13,93 @@ int main(void) {
     TA0CCR2 = 6;                            // CCR2 PWM duty cycle
 
     TA0CTL = TASSEL__SMCLK | MC__UP | TACLR;  // SMCLK, up mode, clear TAR
+} // main01
+
+int main02(void) {
+    //_ForEach(_PinInitAsInOffOut0x,venaALL);
+    //#define vena3                   3,0
+    //#define vena4                   2,3
+    P3DIR &= (~BIT0) ;
+    P3REN &= (~BIT0) ;
+    P3OUT &= (~BIT0) ;
+
+    P2DIR &= (~BIT3) ;
+    P2REN &= (~BIT3) ;
+    P2OUT &= (~BIT3) ;
+
+    while(1){ } // all on
+
+    while(0){ // all off
+        P3DIR |=   BIT0  ;
+        P2DIR |=   BIT3  ;
+    }
+
+    while(1){
+        Delay_10000ms();
+
+        P2DIR &= (~BIT3) ;
+        Delay_1000ms();
+        P3DIR |=   BIT0  ;
+
+        Delay_10000ms();
+
+        P3DIR &= (~BIT0) ;
+        Delay_1000ms();
+        P2DIR |=   BIT3  ;
+
+    }
+} // main02
+
+int main03(void) {
+    //_ForEach(_PinInitAsInOffOut0x,venaALL);
+    //#define vena3                   3,0
+    //#define vena4                   2,3
+    P3DIR |=   BIT0  ;
+    P2DIR |=   BIT3  ;
+
+    while(0){ 
+        P3OUT |=   BIT0  ;
+        P2OUT |=   BIT3  ;
+    } // all on
+
+    while(0){ // all off
+        P3OUT &= (~BIT0) ;
+        P2OUT &= (~BIT3) ;
+    }
+
+    while(1){
+        Delay_100ms();
+
+        P3OUT |=   BIT0  ;
+        Delay_5ms();
+        P2OUT &= (~BIT3) ;
+
+        Delay_100ms();
+
+        P2OUT |=   BIT3  ;
+        Delay_5ms();
+        P3OUT &= (~BIT0) ;
+
+    }
+} // main03
+
+
+int main(void) {
+    main_init(); // _clk_init_16mhz
+
+    while(0){
+        _WDT_wait_interrupt_LPM4 ;  // Enter LPM3
+        __nop();                    // For debugger
+    }
+
+    //_gpio_mclk_p13  ;
+    //_gpio_smclk_p17 ;
+    //_gpio_aclk_p22  ;
+
+    if(0) main01();
+    if(0) main02();
+    if(1) main03();
+    
 
 
     while(1){
