@@ -5,7 +5,7 @@ int main01(void) {
 
     //P1SEL1 |= BIT1 | BIT2;                    // P1.1 and P1.2 options select
     P1SEL1 |= BIT1 ;                    // P1.1 
-    
+
     TA0CCTL1 = OUTMOD_7;                      // CCR1 reset/set
     TA0CCTL2 = OUTMOD_2;                      // CCR2 reset/set
     TA0CCR0 = 12-1;                         // PWM Period
@@ -115,6 +115,23 @@ int main05(void) {
     }
 } // main05
 
+int main06(void) {
+#define _SET6_ON        _SetInY
+#define _SET6_OFF       _SetOutY
+    _PinitAsInOffOut0Y( Vsync3 ) ;
+    _PinitAsInOffOut0Y( Vsync9 ) ;
+
+    //_SET6_OFF( Vsync9 ) ;  Delay_0();    _SET6_OFF( Vsync3 ) ; // 42, 50 += 92 // 1.59A 17.96v // 600Khz , all led on
+    //_SET6_ON( Vsync9 )  ;  Delay_0();    _SET6_ON( Vsync3 )  ; // 48, 45 += 93 , 1.50A 17.70v // 1.8Mhz , all led on
+    while(1){
+        Delay_2000ms();
+        //_SET6_ON( Vsync3 ) ;  Delay_0();    _SET6_OFF( Vsync9 ) ;  // 17, 72 ; 32, 63 , 1.58A 17.92v , 600kHz, 1.8Mhz , good. NOT equal current
+        Delay_2000ms();
+        _SET6_ON( Vsync9 ) ;  Delay_0();    _SET6_OFF( Vsync3 ) ; // 60, 58 ; 44,54 , 1.58A 17.95v  1.8Mhz , 600kHz, good. equal current
+        // 48-33, 50,63 ===+++ 98,99 , 1.56A, 1.58A , 17.92, 17.95v
+    }
+} // main06
+
 
 int main(void) {
     main_init(); // _clk_init_16mhz
@@ -132,8 +149,9 @@ int main(void) {
     if(0) main02();
     if(0) main03();
     if(0) main04();
-    if(1) main05();
-    
+    if(0) main05();
+    if(1) main06();
+
 
 
     while(1){
