@@ -84,25 +84,36 @@ int main03(void) {
 } // main03
 
 int main04(void) {
-#define _SET_ON       _Set1Y
-#define _SET_OFF      _Set0Y
-    //_ForEach(_PinInitAsInOffOut0x,venaALL);
-    //P3DIR |=   BIT0  ;
-    //P2DIR |=   BIT3  ;
+#define _SET4_ON      _Set1Y
+#define _SET4_OFF     _Set0Y
     _SetOutY( vena3 ) ;
     _SetOutY( vena4 ) ;
-    _SetInY( vena3 ) ;
-    _SetInY( vena4 ) ;
 
     // vena3   -> 3,0 ;          vena4  -> 2,3
     while(1){
         Delay_100ms();
-        _SET_ON( vena3 ) ;  Delay_5ms();    _SET_OFF( vena4 ) ; 
+        _SET4_ON( vena3 ) ;  Delay_5ms();    _SET4_OFF( vena4 ) ; 
         Delay_100ms();
-        _SET_ON( vena4 ) ;  Delay_5ms();    _SET_OFF( vena3 ) ;
+        _SET4_ON( vena4 ) ;  Delay_5ms();    _SET4_OFF( vena3 ) ;
 
     }
 } // main04
+
+int main05(void) {
+#define _SET5_ON        _SetInY
+#define _SET5_OFF       _SetOutY
+    _PinitAsInOffOut0Y( vena3 ) ;
+    _PinitAsInOffOut0Y( vena4 ) ;
+
+    // vena3   -> 3,0 ;          vena4  -> 2,3
+    while(1){
+        Delay_100ms();
+        _SET5_ON( vena3 ) ;  Delay_5ms();    _SET5_OFF( vena4 ) ; 
+        Delay_100ms();
+        _SET5_ON( vena4 ) ;  Delay_5ms();    _SET5_OFF( vena3 ) ;
+
+    }
+} // main05
 
 
 int main(void) {
@@ -120,7 +131,8 @@ int main(void) {
     if(0) main01();
     if(0) main02();
     if(0) main03();
-    if(1) main04();
+    if(0) main04();
+    if(1) main05();
     
 
 
