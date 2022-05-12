@@ -111,7 +111,6 @@ int main05(void) {
         _SET5_ON( vena3 ) ;  Delay_5ms();    _SET5_OFF( vena4 ) ; 
         Delay_100ms();
         _SET5_ON( vena4 ) ;  Delay_5ms();    _SET5_OFF( vena3 ) ;
-
     }
 } // main05
 
