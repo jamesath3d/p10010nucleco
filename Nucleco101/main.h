@@ -12,6 +12,9 @@
 #include "wdt_init.h"
 #include "gpio_init.h"
 #include "main_init.h"
+#include "mtest01.h"
+#include "mtest02.h"
+#include "mtest03.h"
 
 
 #endif
