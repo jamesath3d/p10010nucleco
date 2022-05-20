@@ -6,6 +6,12 @@ Nucleco101/main.c
 Nucleco101/main.h
 Nucleco101/main_init.c
 Nucleco101/main_init.h
+Nucleco101/mtest01.c
+Nucleco101/mtest01.h
+Nucleco101/mtest02.c
+Nucleco101/mtest02.h
+Nucleco101/mtest03.c
+Nucleco101/mtest03.h
 Nucleco101/wdt_init.c
 Nucleco101/wdt_init.h
 ../../../../../ti/ti/ccs1040/ccs/ccs_base/msp430/include_gcc/in430.h
