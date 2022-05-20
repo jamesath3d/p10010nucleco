@@ -1,6 +1,6 @@
 #include "main.h"
 
-int main01(void) {
+void main01(void) {
     P1DIR |= BIT1 | BIT2;                     // P1.1 and P1.2 output
 
     //P1SEL1 |= BIT1 | BIT2;                    // P1.1 and P1.2 options select
@@ -15,7 +15,7 @@ int main01(void) {
     TA0CTL = TASSEL__SMCLK | MC__UP | TACLR;  // SMCLK, up mode, clear TAR
 } // main01
 
-int main02(void) {
+void main02(void) {
     //_ForEach(_PinInitAsInOffOut0x,venaALL);
     //#define vena3                   3,0
     //#define vena4                   2,3
@@ -50,7 +50,7 @@ int main02(void) {
     }
 } // main02
 
-int main03(void) {
+void main03(void) {
     //_ForEach(_PinInitAsInOffOut0x,venaALL);
     //#define vena3                   3,0
     //#define vena4                   2,3
@@ -83,42 +83,42 @@ int main03(void) {
     }
 } // main03
 
-int main04(void) {
-#define _SET4_ON      _Set1Y
-#define _SET4_OFF     _Set0Y
-    _SetOutY( vena3 ) ;
-    _SetOutY( vena4 ) ;
+void main04(void) {
+#define _SET4_ON      _Set1X
+#define _SET4_OFF     _Set0X
+    _Y1( _SetOutX, vena3 ) ;
+    _Y1( _SetOutX, vena4 ) ;
 
     // vena3   -> 3,0 ;          vena4  -> 2,3
     while(1){
         Delay_100ms();
-        _SET4_ON( vena3 ) ;  Delay_5ms();    _SET4_OFF( vena4 ) ; 
+        _Y1( _SET4_ON, vena3 ) ;  Delay_5ms();    _Y1( _SET4_OFF, vena4 ) ; 
         Delay_100ms();
-        _SET4_ON( vena4 ) ;  Delay_5ms();    _SET4_OFF( vena3 ) ;
+        _Y1( _SET4_ON, vena4 ) ;  Delay_5ms();    _Y1( _SET4_OFF, vena3 ) ;
 
     }
 } // main04
 
-int main05(void) {
-#define _SET5_ON        _SetInY
-#define _SET5_OFF       _SetOutY
-    _PinitAsInOffOut0Y( vena3 ) ;
-    _PinitAsInOffOut0Y( vena4 ) ;
+void main05(void) {
+#define _SET5_ON        _SetInX
+#define _SET5_OFF       _SetOutX
+    _Y1( _PinitAsInRenOffOut0X, vena3 ) ;
+    _Y1( _PinitAsInRenOffOut0X, vena4 ) ;
 
     // vena3   -> 3,0 ;          vena4  -> 2,3
     while(1){
         Delay_100ms();
-        _SET5_ON( vena3 ) ;  Delay_5ms();    _SET5_OFF( vena4 ) ; 
+        _Y1( _SET5_ON, vena3 ) ;  Delay_5ms();    _Y1( _SET5_OFF, vena4 ) ; 
         Delay_100ms();
-        _SET5_ON( vena4 ) ;  Delay_5ms();    _SET5_OFF( vena3 ) ;
+        _Y1( _SET5_ON, vena4 ) ;  Delay_5ms();    _Y1( _SET5_OFF, vena3 ) ;
     }
 } // main05
 
-int main06(void) {
-#define _SET6_ON        _SetInY
-#define _SET6_OFF       _SetOutY
-    _PinitAsInOffOut0Y( Vsync3 ) ;
-    _PinitAsInOffOut0Y( Vsync9 ) ;
+void main06(void) {
+#define _SET6_ON        _SetInX
+#define _SET6_OFF       _SetOutX
+    _Y1( _PinitAsInRenOffOut0X, Vsync3 ) ;
+    _Y1( _PinitAsInRenOffOut0X, Vsync9 ) ;
 
     //_SET6_OFF( Vsync9 ) ;  Delay_0();    _SET6_OFF( Vsync3 ) ; // 42, 50 += 92 // 1.59A 17.96v // 600Khz , all led on
     //_SET6_ON( Vsync9 )  ;  Delay_0();    _SET6_ON( Vsync3 )  ; // 48, 45 += 93 , 1.50A 17.70v // 1.8Mhz , all led on
@@ -126,7 +126,7 @@ int main06(void) {
         Delay_2000ms();
         //_SET6_ON( Vsync3 ) ;  Delay_0();    _SET6_OFF( Vsync9 ) ;  // 17, 72 ; 32, 63 , 1.58A 17.92v , 600kHz, 1.8Mhz , good. NOT equal current
         Delay_2000ms();
-        _SET6_ON( Vsync9 ) ;  Delay_0();    _SET6_OFF( Vsync3 ) ; // 60, 58 ; 44,54 , 1.58A 17.95v  1.8Mhz , 600kHz, good. equal current
+        _Y1( _SET6_ON, Vsync9 ) ;  Delay_0();    _Y1( _SET6_OFF, Vsync3 ) ; // 60, 58 ; 44,54 , 1.58A 17.95v  1.8Mhz , 600kHz, good. equal current
         // 48-33, 50,63 ===+++ 98,99 , 1.56A, 1.58A , 17.92, 17.95v
     }
 } // main06

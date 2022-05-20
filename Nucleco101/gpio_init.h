@@ -28,7 +28,7 @@ void gpio_init(void);
 
 #define vena3                   3,0
 #define vena4                   2,3
-#define venaALL                 2,vena3,vena4
+//#define venaALL                 2,vena3,vena4
 
 #define Vsync3                  1,0
 #define Vsync4                  1,1
