@@ -15,6 +15,10 @@
 
 #include "led__init.h"
 
+#include "interupt_timer.h"
+#include "interupt_wdt.h"
+
+
 #include "mtest01.h"
 #include "mtest02.h"
 #include "mtest03.h"

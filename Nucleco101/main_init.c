@@ -8,6 +8,7 @@ void main_init(void){
     _gpio_init();
 
     led_1234_init_all_off();
+    while ( 0 ) { led_1234_init_test_once_all_by_lpm(); }
 
     _uart_p1_5_tx_only_init();
 
