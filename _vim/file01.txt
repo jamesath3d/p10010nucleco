@@ -2,6 +2,10 @@
 Makefile.env
 Nucleco101/gpio_init.c
 Nucleco101/gpio_init.h
+Nucleco101/led_1234_init_all_off.c
+Nucleco101/led_1234_init_test_loop.c
+Nucleco101/led_1234_init_test_once.c
+Nucleco101/led__init.h
 Nucleco101/main.c
 Nucleco101/main.h
 Nucleco101/main_init.c
@@ -62,4 +66,5 @@ Nucleco101/wdt_init.h
 ../workspace_v10/BlinkLED_MSP430FR2433_03/_uart_p1_5_tx_only_init.c
 ../workspace_v10/BlinkLED_MSP430FR2433_03/_uart_p1_5_tx_only_put_hex.c
 ../workspace_v10/BlinkLED_MSP430FR2433_03/_uart_p1_5_tx_only_testloop.c
+../workspace_v10/BlinkLED_MSP430FR2433_03/_wdt_init.c
 ../workspace_v10/BlinkLED_MSP430FR2433_03/_wdt_init.h
