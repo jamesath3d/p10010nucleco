@@ -12,6 +12,7 @@ void main_init(void){
     while ( 0 ) { led_1234_init_test_once_all_by_lpm(); }
 
     _uart_p1_5_tx_only_init();
-    { uint8_t __ii = 0 ; while ( 1 ) { __ii ++ ; _uart_p1_5_tx_only_put_u8d( __ii ) ; } }
+    //{ uint8_t __ii = 0 ; while ( 1 ) { __ii ++ ; _uart_p1_5_tx_only_put_u8d( __ii ) ; } }
+    while ( 1 ) { _uart_p1_5_tx_only_loop_put_u8_by_lpm(); }
 
 } // main_init
