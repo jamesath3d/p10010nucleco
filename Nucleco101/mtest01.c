@@ -19,8 +19,8 @@ void main01(void) {
 
 void main02(void) {
     //_ForEach(_PinInitAsInOffOut0x,venaALL);
-    //#define vena3                   3,0
-    //#define vena4                   2,3
+    //#define Vena3                   3,0
+    //#define Vena4                   2,3
     P3DIR &= (~BIT0) ;
     P3REN &= (~BIT0) ;
     P3OUT &= (~BIT0) ;
@@ -54,8 +54,8 @@ void main02(void) {
 
 void main03(void) {
     //_ForEach(_PinInitAsInOffOut0x,venaALL);
-    //#define vena3                   3,0
-    //#define vena4                   2,3
+    //#define Vena3                   3,0
+    //#define Vena4                   2,3
     P3DIR |=   BIT0  ;
     P2DIR |=   BIT3  ;
 
@@ -88,15 +88,15 @@ void main03(void) {
 void main04(void) {
 #define _SET4_ON      _Set1X
 #define _SET4_OFF     _Set0X
-    _Y1( _SetOutX, vena3 ) ;
-    _Y1( _SetOutX, vena4 ) ;
+    _Y1( _SetOutX, Vena3 ) ;
+    _Y1( _SetOutX, Vena4 ) ;
 
-    // vena3   -> 3,0 ;          vena4  -> 2,3
+    // Vena3   -> 3,0 ;          Vena4  -> 2,3
     while(1){
         Delay_100ms();
-        _Y1( _SET4_ON, vena3 ) ;  Delay_5ms();    _Y1( _SET4_OFF, vena4 ) ; 
+        _Y1( _SET4_ON, Vena3 ) ;  Delay_5ms();    _Y1( _SET4_OFF, Vena4 ) ; 
         Delay_100ms();
-        _Y1( _SET4_ON, vena4 ) ;  Delay_5ms();    _Y1( _SET4_OFF, vena3 ) ;
+        _Y1( _SET4_ON, Vena4 ) ;  Delay_5ms();    _Y1( _SET4_OFF, Vena3 ) ;
 
     }
 } // main04
@@ -104,15 +104,15 @@ void main04(void) {
 void main05(void) {
 #define _SET5_ON        _SetInX
 #define _SET5_OFF       _SetOutX
-    _Y1( _PinitAsInRenOffOut0X, vena3 ) ;
-    _Y1( _PinitAsInRenOffOut0X, vena4 ) ;
+    _Y1( _PinitAsInRenOffOut0X, Vena3 ) ;
+    _Y1( _PinitAsInRenOffOut0X, Vena4 ) ;
 
-    // vena3   -> 3,0 ;          vena4  -> 2,3
+    // Vena3   -> 3,0 ;          Vena4  -> 2,3
     while(1){
         Delay_100ms();
-        _Y1( _SET5_ON, vena3 ) ;  Delay_5ms();    _Y1( _SET5_OFF, vena4 ) ; 
+        _Y1( _SET5_ON, Vena3 ) ;  Delay_5ms();    _Y1( _SET5_OFF, Vena4 ) ; 
         Delay_100ms();
-        _Y1( _SET5_ON, vena4 ) ;  Delay_5ms();    _Y1( _SET5_OFF, vena3 ) ;
+        _Y1( _SET5_ON, Vena4 ) ;  Delay_5ms();    _Y1( _SET5_OFF, Vena3 ) ;
     }
 } // main05
 

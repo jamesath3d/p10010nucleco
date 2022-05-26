@@ -1,38 +1,20 @@
-#ifndef GPIO_INIT_H
-#define GPIO_INIT_H
+#ifndef GPIO_INIT_H_
+#define GPIO_INIT_H_
 
 void gpio_init(void);
 
-
-// p1.0/vsyn3
-#define vsync3_PORT_            1
-#define vsync3_PIN_             0
-//#define vsync3_TO_0()           { _Set0_( vsync3 ); }     // to 0
-//#define vsync3_init()           { _SetOUT_(vsync3); }     // }
-//#define vsync3_TO_1()           { _Set1_( vsync3 ); }     // to 1
+#define Vsync9      1,0
+#define Vsync3      1,1
+#define Vsync4      1,2
+#define Vsync5      1,3
 
 
-// p1.1/vsyn4
-#define vsync4_PORT_            1
-#define vsync4_PIN_             1
-//#define vsync4_TO_0()           { _Set0_( vsync4 ); }     // to 0
-//#define vsync4_init()           { _SetOUT_(vsync4); }     // }
-//#define vsync4_TO_1()           { _Set1_( vsync4 ); }     // to 1
+#define Vrt3        2,2
+#define Vrt4        2,3
 
-// p1.2/vsyn5
-#define vsync5_PORT_            1
-#define vsync5_PIN_             2
-// p1.3/vsyn6
-#define vsync6_PORT_            1
-#define vsync6_PIN_             3
+#define Vena3       2,0
+#define Vena4       2,1
 
-#define vena3                   3,0
-#define vena4                   2,3
-//#define venaALL                 2,vena3,vena4
-
-#define Vsync3                  1,0
-#define Vsync4                  1,1
-#define Vsync5                  1,2
-#define Vsync9                  1,3
+//#define gpio_all    Vsync9,Vsync3,Vsync4,Vsync5,Vrt3,Vrt4,Vena3,Vena4
 
 #endif
